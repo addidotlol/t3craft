@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "t3craft",
+  "version": "${version}",
+  "name": "T3 Craft",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/t3craft/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "lol.addi.t3craft.client.T3craftDataGenerator"
+    ],
+    "client": [
+      "lol.addi.t3craft.client.T3craftClient"
+    ],
+    "main": [
+      "lol.addi.t3craft.T3craft"
+    ]
+  },
+  "mixins": [
+    "t3craft.mixins.json",
+    {
+      "config": "t3craft.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-language-kotlin": ">=${kotlin_loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
